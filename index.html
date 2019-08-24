@@ -8,11 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 
+	<!-- <link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/> -->
 </head>
 <body>
 
@@ -71,6 +71,24 @@
 	</section>
 	<!--  End Hero Section  -->
 
+	<script>
+		const loadCSS = (url) => {
+
+			if(document.createStyleSheet) {
+				document.createStyleSheet(url);
+			}
+			else {
+				var styles = "@import url("+url+");";
+				var newSS=document.createElement('link');
+				newSS.rel='stylesheet';
+				newSS.href='data:text/css,'+escape(styles);
+				document.getElementsByTagName("head")[0].appendChild(newSS);
+			}
+		}
+
+		loadCSS("css/owl.transitions.css")
+		loadCSS("css/owl.carousel.css")
+	</script>
 
 
 
